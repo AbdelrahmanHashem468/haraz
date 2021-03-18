@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\Invoice;
 use App\Models\product;
+use App\Models\Cart;
 use Redirect;
 
 class CustomerController extends Controller
@@ -60,5 +61,14 @@ class CustomerController extends Controller
             'paydate'=>now()
             ]);
         return redirect('/customers');
+    }
+
+    public function updateQan(Request $request)
+    {
+        $fetchedData = $request->all();
+        Cart::where('product_id',$fetchedData['id'])->update([
+            'quantity'=>$fetchedData['quan']
+            ]);
+        return json_encode( $fetchedData);
     }
 }

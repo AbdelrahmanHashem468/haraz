@@ -37,4 +37,5 @@ Route::post('/addcustomer          ', [CustomerController::class, 'addcustomer']
 Route::get('/customer/{id}         ', [CustomerController::class, 'customerInvoices']);
 Route::get('/invoiceDetail/{id}    ', [CustomerController::class, 'invoiceDetail']);
 Route::get('/payinvoice/{id}       ', [CustomerController::class, 'payinvoice']);
+Route::post('/updateQan            ', [CustomerController::class, 'updateQan']);
 
