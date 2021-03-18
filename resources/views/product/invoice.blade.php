@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('content')
-<div class="row invoicecolor">
+<div class="row invoicecolor duBorder">
         <table class="table ">
             <div class="col-md-4 detial">
                 <h6> العميل   :  <span>{{$customer->name}}</span></h6>
