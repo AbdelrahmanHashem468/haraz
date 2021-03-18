@@ -1,0 +1,152 @@
+#margenav{
+    margin-right: 60px;
+
+}
+body{
+    background-color: #071625!important;
+    padding-top: 58px; 
+}
+a,label,input{
+    color: white;
+    text-align: right;
+    direction: rtl!important;
+    float: right;
+}
+.pricee{
+    color: #ff9f1a;
+    margin-right: 100px;
+}
+
+.img-fluid{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+#navbarDropdownMenuLink{
+    left: auto !important;
+    right: 0;
+    text-align: right;
+    
+}
+
+.card{
+    background-color: #0d1924!important;
+    background-clip: padding-box!important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+
+    
+   
+}
+.card-body{
+    background-color: #0d1924;
+}
+.card-title{
+    color: white;
+    text-align: right;
+}
+.card-title:hover{
+    color: rgb(53, 53, 104);
+}
+.card-img-top{
+    border-radius: 20%10%;
+    height: 200px;
+    box-shadow: 0px 0px 30px rgb(11, 12, 27);
+    margin-top:10px;
+}
+.btt{
+    float: right}
+
+.add{
+    margin-bottom: 200px;
+}
+
+.add2{
+    text-align: center!important;
+    width: 150px;
+    margin-right: 50px!important;
+    margin-top: 50px!important;
+    font-weight: 600;
+}
+.divform{
+    display: block;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    width: 50%;
+    margin:50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+select{
+    margin: 10px;
+}
+.subbut{
+    float: left;
+    margin-top: 20px;
+
+}
+.hoverr a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none!important;
+}
+.alert-danger{
+color: #d4d6ef!important;
+background-color: #311013!important;
+border-color: #1b1717!important;
+}
+
+.alert-success {
+    color: #ffffff!important;
+    background-color: #276f38!important;
+    border-color: #1f2521!important;
+}
+.invoicecolor{
+    background-color: white;
+    text-align: right;
+    margin: 20px;
+}
+
+.print {
+    display:none;
+}
+.no-print{
+    display:block;
+}
+@media print{
+    .print {
+        display:block;
+    }
+    .no-print{
+        display:none;
+    }
+}
+
+.alert-warning {
+    color: #09090b!important;
+    background-color: #c4d510!important;
+    border-color: #ffeeba!important;
+}
+.alert{
+    text-align: center;
+
+}
+.table-dark {
+    --bs-table-bg: #0e1c28;
+    --bs-table-striped-bg: #071827;
+    --bs-table-striped-color: #ff9f1a;
+    text-align: center;
+}
+
+.table-dark a{
+    color: #ff9f1a;
+    float: none;
+}
+.title{
+    text-align: right;
+    margin: 25px;
+    color: #ff9f1a!important;
+}
