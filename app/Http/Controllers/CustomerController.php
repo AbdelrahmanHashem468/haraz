@@ -14,6 +14,8 @@ class CustomerController extends Controller
     public function show()
     {
         $customers = Customer::all();
+        $store_quan = Product::where('id', 11)->pluck('store_quan');
+dd($store_quan[0]);
         return view('customer.customers',compact('customers'));
     }
 
@@ -66,9 +68,26 @@ class CustomerController extends Controller
     public function updateQan(Request $request)
     {
         $fetchedData = $request->all();
+        $store_quan = Product::where('id', $fetchedData['id'])->pluck('store_quan');
+        if($store_quan[0]>=$fetchedData['quan'])
+        {
+            Cart::where('product_id',$fetchedData['id'])->update([
+                'quantity'=>$fetchedData['quan']
+                ]);
+            return json_encode( $fetchedData);
+        }
+        else
+        {
+            return json_encode( ['errors'  =>'الكمية غير متاحه']);
+        }
+    }
+
+    /*public function updateQan(Request $request)
+    {
+        $fetchedData = $request->all();
         Cart::where('product_id',$fetchedData['id'])->update([
             'quantity'=>$fetchedData['quan']
             ]);
         return json_encode( $fetchedData);
-    }
+    }*/
 }

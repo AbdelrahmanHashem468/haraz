@@ -56,8 +56,15 @@ a,label,input{
     margin-top:10px;
 }
 .btt{
-    float: right}
+    float: right;
+    width: 100px;
+}
 
+.bttt{
+        float: left;
+        width: 100px;
+        background-color: #e29120!important;
+    }
 .add{
     margin-bottom: 200px;
 }

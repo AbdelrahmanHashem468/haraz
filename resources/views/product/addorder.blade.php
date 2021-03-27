@@ -56,9 +56,9 @@
             </div>  
 
             <div class="form-group">
-                <label >العملاء</label>
+                <label >الموردين</label>
                 <select name="client_id" class="form-select" aria-label="Default select example">
-                    <option selected disabled>اختر العميل</option>
+                    <option selected disabled>اختر المورد</option>
                     @foreach ($clients as $client)
                         <option value="{{$client->id}}" >{{$client->name}}</option>
                     @endforeach

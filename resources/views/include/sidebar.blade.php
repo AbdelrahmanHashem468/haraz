@@ -8,8 +8,8 @@
         <nav class="navbar navbar-expand fixed-top navbar-dark  maincolor rtldir"> <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"><span class="navbar-toggler-icon"></span></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
             <div class="collapse navbar-collapse" id="navbarsExample02">
                 <ul class="navbar-nav mr-auto rtl ">
-                    <li class="nav-item active rtl"> <a class="nav-link" href="../customers">الزبائن <span class="sr-only">(current)</span></a> </li>
-                    <li class="nav-item active rtl"> <a class="nav-link" href="#">العملاء <span class="sr-only">(current)</span></a> </li>
+                    <li class="nav-item active rtl"> <a class="nav-link" href="../customers">العملاء <span class="sr-only">(current)</span></a> </li>
+                    <li class="nav-item active rtl"> <a class="nav-link" href="#">الموردين <span class="sr-only">(current)</span></a> </li>
                     <li class="nav-item active rtl"> <a class="nav-link" href="../shoppingcart">العربة</a> </li>
                     <li class="nav-item active rtl"> <a class="nav-link" href="#">الحسابات</a> </li>
                 </ul>
