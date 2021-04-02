@@ -28,7 +28,7 @@
                     <li> <a href="../product/2">البقوليات</a> </li>
                     <li> <a href="../product/3">الحلواني</a> </li>
                     <li> <a href="../product/4">المستحضرات</a> </li>
-                    <a href="../orderform" class="btn btn-primary active add2" role="button"  aria-pressed="true">اضافة طلب</a>
+                    <a href="../ordercart" class="btn btn-primary active add2" role="button"  aria-pressed="true">عمل طلب</a>
                     <a href="../productform" class="btn btn-primary active add2" role="button"  aria-pressed="true"> اضافة منتج جديد</a>
                 </ul>
             </div> <!-- /#sidebar-wrapper -->

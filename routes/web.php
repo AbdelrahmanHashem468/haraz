@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,8 @@ Route::get('/invoiceDetail/{id}    ', [CustomerController::class, 'invoiceDetail
 Route::get('/payinvoice/{id}       ', [CustomerController::class, 'payinvoice']);
 Route::post('/updateQan            ', [CustomerController::class, 'updateQan']);
 
+
+
+
+Route::get ('addToOrderCart/{id}   ', [ClientController::class, 'addToOrderCart']);
+Route::get ('/ordercart            ', [ClientController::class, 'ordercart']);

@@ -11,7 +11,6 @@ use App\Models\Customer;
 use App\Models\Invoice;
 use App\Models\Client;
 use App\Models\Cart;
-
 use DB;
 
 class ProductController extends Controller

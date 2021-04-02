@@ -54,7 +54,8 @@
                         <h4 class="price">سعر الشراء <span>{{$product->inPrice}}</span></h4>
                         <h4 class="price">الكمية المتاحة<span>{{$product->store_quan}}</span></h4>
 						<div class="action">
-							<a  href="../addtocart/{{$product->id}}" class="add-to-cart btn btn-default" type="button">اضف الي العربة</a>
+							<a  href="../addtocart/{{$product->id}}" class="add-to-cart btn btn-primary" type="button">اضف الي العربة</a>
+							<a  href="../addToOrderCart/{{$product->id}}" class="add-to-cart btn btn-default" type="button">اضف الي الطلب</a>
 						</div>
 					</div>
 				</div>

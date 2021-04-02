@@ -14,8 +14,6 @@ class CustomerController extends Controller
     public function show()
     {
         $customers = Customer::all();
-        $store_quan = Product::where('id', 11)->pluck('store_quan');
-dd($store_quan[0]);
         return view('customer.customers',compact('customers'));
     }
 

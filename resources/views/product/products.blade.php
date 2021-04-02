@@ -36,7 +36,7 @@
                 <div class="card-body">
                     <a href="../productdetail/{{$product->id}}" class="hoverr"><h5 class="card-title">{{$product->name}}<span class="pricee">{{$product->outPrice}}</span></h5></a>
                     <a href="../addtocart/{{$product->id}}" class="btn btn-primary active btt"> العربة</a>
-                    <a href="../addtocart/{{$product->id}}" class="btn btn-primary active bttt">الطلب</a>
+                    <a href="../addToOrderCart/{{$product->id}}" class="btn btn-primary active bttt">الطلب</a>
                 </div>
             </div>
         @endforeach
