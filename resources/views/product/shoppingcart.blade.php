@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('content')
-<script src="https://use.fontawesome.com/c560c025cf.js"></script>
+
 @if ($carts==null)
 <div class="card-header bg-warning text-light">
     <i class="fa fa-shopping-cart" aria-hidden="true"></i>

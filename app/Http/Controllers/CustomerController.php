@@ -67,7 +67,7 @@ class CustomerController extends Controller
     {
         $fetchedData = $request->all();
         $store_quan = Product::where('id', $fetchedData['id'])->pluck('store_quan');
-        if($store_quan[0]>=$fetchedData['quan'])
+        if($store_quan[0]>=$fetchedData['quan'] && $fetchedData['quan']>0)
         {
             Cart::where('product_id',$fetchedData['id'])->update([
                 'quantity'=>$fetchedData['quan']

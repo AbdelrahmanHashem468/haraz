@@ -20,9 +20,9 @@ Route::get ('productform', function () {return view('product.addproduct');});
 
 Route::get ( '/product/{id}         ', [ProductController::class, 'show']);
 Route::post('/addproduct            ', [ProductController::class, 'addProduct']);
-Route::get ('/orderform             ', [ProductController::class, 'orderform']);
+Route::get ('/orderform             ', [ProductController::class, 'orderform']);/////
 Route::get ('/productcategory/{id}  ', [ProductController::class, 'productcategory']);
-Route::post('/addorder              ', [ProductController::class, 'addorder']);
+Route::post('/addorder              ', [ProductController::class, 'addorder']);/////
 Route::get ('productdetail/{id}     ', [ProductController::class, 'productdetail']);
 Route::get ('addtocart/{id}         ', [ProductController::class, 'addtocart']);
 Route::get ('shoppingcart           ', [ProductController::class, 'shoppingcart']);
@@ -43,5 +43,9 @@ Route::post('/updateQan            ', [CustomerController::class, 'updateQan']);
 
 
 
-Route::get ('addToOrderCart/{id}   ', [ClientController::class, 'addToOrderCart']);
-Route::get ('/ordercart            ', [ClientController::class, 'ordercart']);
+Route::get ('addToOrderCart/{id}         ', [ClientController::class, 'addToOrderCart']);
+Route::get ('/ordercart                  ', [ClientController::class, 'ordercart']);
+Route::post('/updateinprice              ', [ClientController::class, 'updateinprice']);
+Route::post('/updateoutprice             ', [ClientController::class, 'updateoutprice']);
+Route::post('/updatequantity             ', [ClientController::class, 'updatequantity']);
+Route::get ('deletefromordercart/{id}    ', [ClientController::class, 'deletefromordercart']);

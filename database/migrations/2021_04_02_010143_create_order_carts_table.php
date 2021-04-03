@@ -17,6 +17,9 @@ class CreateOrderCartsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
+            $table->double('inPrice')->nullable();
+            $table->double('outPrice')->nullable();
+            $table->integer('quantity')->nullable();
             $table->timestamps();
         });
     }
