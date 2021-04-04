@@ -35,6 +35,9 @@
                 <th class="table-secondary">{{$invoice->price}}</th>
             </tr>
         </table>
+        <div class="row maneg">
+            <h6 > أدارة   /   عمر هاشم        ===============        التليفون  /          01152041410    </h6>
+        </div>
         <div class="card-footer no-print">
             @if($invoice->paid==0)
             <div class="pull-right" style="margin: 10px">

@@ -79,13 +79,4 @@ class CustomerController extends Controller
             return json_encode( ['errors'  =>'الكمية غير متاحه']);
         }
     }
-
-    /*public function updateQan(Request $request)
-    {
-        $fetchedData = $request->all();
-        Cart::where('product_id',$fetchedData['id'])->update([
-            'quantity'=>$fetchedData['quan']
-            ]);
-        return json_encode( $fetchedData);
-    }*/
 }

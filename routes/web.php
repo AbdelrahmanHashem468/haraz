@@ -44,8 +44,9 @@ Route::post('/updateQan            ', [CustomerController::class, 'updateQan']);
 
 
 Route::get ('addToOrderCart/{id}         ', [ClientController::class, 'addToOrderCart']);
-Route::get ('/ordercart                  ', [ClientController::class, 'ordercart']);
+Route::get ('/ordercart                  ', [ClientController::class, 'ordercart'])->name('ordercart');
 Route::post('/updateinprice              ', [ClientController::class, 'updateinprice']);
 Route::post('/updateoutprice             ', [ClientController::class, 'updateoutprice']);
 Route::post('/updatequantity             ', [ClientController::class, 'updatequantity']);
 Route::get ('deletefromordercart/{id}    ', [ClientController::class, 'deletefromordercart']);
+Route::get ('showorder/{id}              ', [ClientController::class, 'showorder']);

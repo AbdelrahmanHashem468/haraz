@@ -34,6 +34,16 @@
             </div>
             <hr>
             @endfor
+            @if (\Session::has('danger'))
+            <div class="alert alert-danger">
+                <ul>
+                    <li>{!! \Session::get('danger') !!}</li>
+                </ul>
+            </div>
+            @endif
+            @isset($nullvalue)
+                <h1>jhdsh</h1>
+            @endisset
             <div class="col-10">
                 <select class="form-select selectcolor selectclientr" id="client" name="client" aria-label="Default select example" >
                     <option  value="" selected  disabled>أختر المورد</option>
@@ -43,7 +53,7 @@
                 </select>
             </div>
             <div class="pull-right ">
-                <a href="../order/"  onclick="location.href=this.href+scrt_var;return false;" class="btn btn-success pull-right foloworder" >تابع الطلب</a>
+                <a href="../showorder/"  onclick="location.href=this.href+scrt_var;return false;" class="btn btn-success pull-right foloworder" >تابع الطلب</a>
             </div>
         </form>
     </div>

@@ -191,7 +191,7 @@ border-color: #1b1717!important;
 }
 
 .proname{
-    color: #ffc107;
+    color: #ff9f1a;
     text-align: right;
 }
 .makeorder{
@@ -215,4 +215,9 @@ border-color: #1b1717!important;
     margin-left: 150px;
     margin-top: 50px;
     width: 120px;
+}
+
+.maneg{
+    margin-top: 10px;
+    text-align: left;
 }
