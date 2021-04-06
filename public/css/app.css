@@ -221,3 +221,9 @@ border-color: #1b1717!important;
     margin-top: 10px;
     text-align: left;
 }
+
+.headline{
+    text-align: right;
+    color: #ff9f1a;
+    margin: 10px;
+}

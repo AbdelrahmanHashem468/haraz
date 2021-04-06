@@ -3,8 +3,8 @@
 
 <div class="row">
     <div class="divform">
-        <form action="addcustomer" method="post">
-            <h4 class="headline">ٌقم بأضافة عميل</h4>
+        <form action="addclient" method="post">
+            <h4 class="headline">ٌقم بأضافة مورد</h4>
             @csrf
             @if (\Session::has('success'))
                 <div class="alert alert-success">
@@ -39,7 +39,7 @@
     </div>
 
     <table class="table table-dark table-striped rtl">
-        <h4 class="headline">=>العملاء</h4>
+        <h4 class="headline">=>الموردين</h4>
         <thead>
             <tr>
             <th scope="col">#</th>
@@ -48,13 +48,13 @@
             <th scope="col">التليفون</th>
             </tr>
         </thead>
-        @for ($i=0;$i<sizeof($customers);$i++)
+        @for ($i=0;$i<sizeof($clients);$i++)
         <tbody>
             <tr>
             <th scope="row">{{$i+1}}</th>
-            <td><a href="../customer/{{$customers[$i]->id}}">{{$customers[$i]->name}}</a></td>
-            <td>{{$customers[$i]->address}}</td>
-            <td>{{$customers[$i]->phone}}</td>
+            <td><a href="../client/{{$clients[$i]->id}}">{{$clients[$i]->name}}</a></td>
+            <td>{{$clients[$i]->address}}</td>
+            <td>{{$clients[$i]->phone}}</td>
             </tr>
         </tbody>
         @endfor

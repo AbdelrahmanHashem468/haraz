@@ -41,7 +41,7 @@ class ProductController extends Controller
             return Redirect::back()->with('success', 'المنتج تمت اضافته');
     }
 
-    public function orderform()
+  /*  public function orderform()
     {
         $category = Product::numcategory();
         $clients = Client::select('name','id')->get();
@@ -85,7 +85,7 @@ class ProductController extends Controller
         if($productOrder==1)
         return Redirect::back()->with('success', 'الطلب تمت اضافته');
 
-    }
+    }*/
 
     public function productdetail($id)
     {

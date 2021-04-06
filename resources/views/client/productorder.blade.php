@@ -3,11 +3,10 @@
 <div class="row invoicecolor duBorder">
         <table class="table ">
             <div class="col-md-4 detial">
-                <h6> العميل   :  <span>{{$customer->name}}</span></h6>
-                <h6> العنوان  :  <span> {{$customer->address}}</span></h6>
-                <h6> التليفون  :  <span>{{$customer->phone}}</span></h6>
-                <h6> التاريخ  :  <span>{{$invoice->created_at->format('d/m/Y')}}</span></h6>
-                @if($invoice->paid==1)<h6> تاريخ الدفع  :  <span>{{$invoice->paydate->format('d/m/Y')}}</span></h6>@endif
+                <h6> العميل   :  <span>{{$client->name}}</span></h6>
+                <h6> العنوان  :  <span> {{$client->address}}</span></h6>
+                <h6> التليفون  :  <span>{{$client->phone}}</span></h6>
+                <h6> التاريخ  :  <span>{{$order->created_at->format('d/m/Y')}}</span></h6>
             </div>
             <thead class="table-light">
             <tr>
@@ -18,34 +17,28 @@
                 <th scope="col">القيمة</th>
             </tr>
             </thead>
-            @for ($i=0;$i<sizeof($invoiceitems);$i++)
+            @for ($i=0;$i<sizeof($productorders);$i++)
             <tbody class="table-light">
                 <tr>
                     <th scope="row">{{$i+1}}</th>
-                    <td>{{$invoiceitems[$i]['product_detail']->name}}</td>
-                    <td>{{$invoiceitems[$i]['price']}}</td>
-                    <td>{{$invoiceitems[$i]['quantity']}}</td>               
-                    <td>{{$invoiceitems[$i]['quantity']*$invoiceitems[$i]['price']}}</td>
+                    <td>{{$productorders[$i]['product_detail']->name}}</td>
+                    <td>{{$productorders[$i]['outPrice']}}</td>
+                    <td>{{$productorders[$i]['quantity']}}</td>               
+                    <td>{{$productorders[$i]['quantity']*$productorders[$i]['inPrice']}}</td>
                 </tr>
                 </tbody>
             @endfor
             <tr class="total ">
                 <td colspan="3" class="table-light"></td>
                 <th class="table-secondary" >المجموع</th>
-                <th class="table-secondary">{{$invoice->price}}</th>
+                <th class="table-secondary">{{$order->price}}</th>
             </tr>
         </table>
         <div class="row maneg">
             <h6 > أدارة   /   عمر هاشم        ===============        التليفون  /          01152041410    </h6>
         </div>
         <div class="card-footer no-print">
-            @if($invoice->paid==0)
-            <div class="pull-right" style="margin: 10px">
-                <a href="../payinvoice/{{$invoice->id}}" class="btn btn-success pull-right">دفع الفاتورة</a>
-            </div>
-            @endif
             <a href="" onclick="jsPrintAll()"   class="btn btn-dark print">طباعة</a>
-
         </div>
 </div>
 

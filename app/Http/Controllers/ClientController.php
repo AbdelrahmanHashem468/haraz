@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
+use App\Models\ProductOrder;
 use App\Models\orderCart;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Client;
 use DB;
@@ -100,4 +102,71 @@ class ClientController extends Controller
         return view('client.order',compact('products','client'));
     }
 
+    public function submitclientorder($id)
+    {
+        $carts =orderCart::ordercardProduct();
+        $order = Order::create([
+            'client_id' => $id,
+            'price'       => $carts[0]['totalPrice']
+        ]);
+        for ($i=0;$i<sizeof($carts);$i++)
+        {
+            ProductOrder::create([
+                'outPrice'      => $carts[$i]->outPrice,
+                'inPrice'      => $carts[$i]->inPrice,
+                'quantity'   => $carts[$i]->quantity,
+                'product_id' => $carts[$i]->id,
+                'order_id' => $order->id
+            ]);
+            $product = Product::find($carts[$i]->id);
+            $product->update([
+                'outPrice' => $carts[$i]->outPrice,
+                'inPrice' => $carts[$i]->inPrice
+            ]);
+            $product->increment('store_quan',$carts[$i]->quantity);        }
+        orderCart::truncate();
+        return redirect('/clients');
+    }
+
+    public function show()
+    {
+        $clients = Client::all();
+        return view('client.clients',compact('clients'));
+    }
+
+    public function addclient(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $fetchedData = $request->all();
+
+        $client = Client::create([
+            'name' => $fetchedData['name'],
+            'address' => $fetchedData['address'],
+            'phone' => $fetchedData['phone']
+        ])->wasRecentlyCreated;
+
+        if($client==1)
+            return Redirect::back()->with('success', ' تمت اضافت مورد');
+    }
+
+    public function clientorder($id)
+    {
+        $orders = Order::where('client_id',$id)->get();
+        $client = Client::find($id);
+        return view('client.profile',compact('orders','client'));
+    }
+
+    public function orderDetail($id)
+    {
+        $order  = Order::find($id) ;
+        $client = Client::find($order->id);
+        $productorders = Order::find($id)->productorders;
+        foreach($productorders as $productorder)
+        {
+            $productorder['product_detail'] = Product::find($productorder['product_id']);
+        }
+        return view('client.productorder',compact('order','productorders','client'));
+    }
 }

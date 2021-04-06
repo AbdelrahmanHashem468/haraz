@@ -40,7 +40,7 @@
 
         <div class="card-footer no-print">
             <div class="pull-right" style="margin: 10px">
-                <a href="..//{{$client->id}}" class="btn btn-success pull-right">تأكيد الطلب</a>
+                <a href="../submitclientorder/{{$client->id}}" class="btn btn-success pull-right">تأكيد الطلب</a>
             </div>
             <a href="" onclick="jsPrintAll()"   class="btn btn-dark print">طباعة</a>
         </div>
