@@ -4,15 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\PayTransaction;
+use App\Models\Client;
 
-class Client extends Model
+class PayTransaction extends Model
 {
     use HasFactory;
     protected $guarded = [];
 
-    public function paytransactions()
+    public function client()
     {
-        return $this->hasMany(PayTransaction::class);
+        return $this->belongsTo(Client::class);
     }
 }

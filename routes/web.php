@@ -55,3 +55,4 @@ Route::get('/clients                     ', [ClientController::class, 'show']);
 Route::post('/addclient                  ', [ClientController::class, 'addclient']);
 Route::get('/client/{id}                 ', [ClientController::class, 'clientorder']);
 Route::get('/orderDetail/{id}            ', [ClientController::class, 'orderDetail']);
+Route::post('/paytoclient                ', [ClientController::class, 'paytoclient']);

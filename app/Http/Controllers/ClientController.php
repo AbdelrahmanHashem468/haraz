@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
+use App\Models\PayTransaction;
 use App\Models\ProductOrder;
 use App\Models\orderCart;
 use App\Models\Order;
@@ -155,18 +156,39 @@ class ClientController extends Controller
     {
         $orders = Order::where('client_id',$id)->get();
         $client = Client::find($id);
-        return view('client.profile',compact('orders','client'));
+        $paytransaction  =  PayTransaction::where('client_id',$id)->get();
+        $totalinvoiceprice = $orders->sum('price');
+        $totalpayeprice    = $paytransaction->sum('price');;
+        $therestofamount   = $totalinvoiceprice - $totalpayeprice;
+        return view('client.profile',compact('orders','client','therestofamount','paytransaction'));
     }
 
     public function orderDetail($id)
     {
         $order  = Order::find($id) ;
-        $client = Client::find($order->id);
+        $client = Client::find($order->client_id);
         $productorders = Order::find($id)->productorders;
         foreach($productorders as $productorder)
         {
             $productorder['product_detail'] = Product::find($productorder['product_id']);
         }
         return view('client.productorder',compact('order','productorders','client'));
+    }
+
+    public function paytoclient(Request $request)
+    {
+        $request->validate([
+            'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            'client_id' => 'required'
+        ]);
+        $fetchedData = $request->all();
+
+        $paytransaction = PayTransaction::create([
+            'price' => $fetchedData['price'],
+            'client_id' => $fetchedData['client_id']
+        ])->wasRecentlyCreated;
+
+        if($paytransaction==1)
+            return Redirect::back()->with('success', ' تمت دفع المبلغ');
     }
 }

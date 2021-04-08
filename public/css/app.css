@@ -227,3 +227,19 @@ border-color: #1b1717!important;
     color: #ff9f1a;
     margin: 10px;
 }
+
+.form-inline{
+    display: block!important;
+}
+
+.form-inline .btn-primary{
+    float: right;
+    margin-right: 40px;
+}
+
+.payhis{
+    font-size: 30px;
+    color: #ff9f1a!important;
+    text-decoration:underline!important;
+    margin-right: 120px;
+}
