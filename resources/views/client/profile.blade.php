@@ -32,6 +32,13 @@
             </ul>
         </div>
         @endif
+        @if (\Session::has('danger'))
+            <div class="alert alert-danger">
+                <ul>
+                    <li>{!! \Session::get('danger') !!}</li>
+                </ul>
+            </div>
+        @endif
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

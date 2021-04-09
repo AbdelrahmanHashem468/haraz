@@ -39,6 +39,7 @@
 								@endif      
 							</div>
                         </div>
+						<a  href="../editproduct/{{$product->id}}" class=" btn btn-info" type="button" style="width: fit-content">تعديل المنتج</a>
                     </div>
 					<div class="details col-md-6" dir="rtl" lang="ar">
 						<h3 class="product-title">{{$product->name}}</h3>

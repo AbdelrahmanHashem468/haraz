@@ -24,6 +24,8 @@ Route::post('/addproduct            ', [ProductController::class, 'addProduct'])
 //Route::get ('/productcategory/{id}  ', [ProductController::class, 'productcategory']);
 //Route::post('/addorder              ', [ProductController::class, 'addorder']);
 Route::get ('productdetail/{id}     ', [ProductController::class, 'productdetail']);
+Route::get ('editproduct/{id}       ', [ProductController::class, 'editproduct']);
+Route::post('updateproduct          ', [ProductController::class, 'updateproduct']);
 Route::get ('addtocart/{id}         ', [ProductController::class, 'addtocart']);
 Route::get ('shoppingcart           ', [ProductController::class, 'shoppingcart']);
 Route::get ('deletefromcart/{id}    ', [ProductController::class, 'deletefromcart']);

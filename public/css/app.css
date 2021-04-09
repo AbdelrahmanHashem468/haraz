@@ -243,3 +243,13 @@ border-color: #1b1717!important;
     text-decoration:underline!important;
     margin-right: 120px;
 }
+
+.fleft{
+    float: left;
+    padding-left: 20px;
+}
+
+.wid{
+    width: 600px;
+    float: right;
+}

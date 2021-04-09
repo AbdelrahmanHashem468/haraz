@@ -163,4 +163,33 @@ class ProductController extends Controller
         return redirect('/customers');
     }
 
+    public function editproduct($id)
+    {
+        $product = Product::find($id);
+        return view('product.editproduct',compact('product')); 
+    }
+
+    public function updateproduct(Request $request)
+    {
+        $fetchedData = $request->all();
+
+        $request->validate([
+            'name' => [
+                'required',
+                'unique:products,name,'.$fetchedData['id']
+            ],
+            'category' => 'required',
+            'unit'  =>  'required'
+        ]);
+
+        product::where('id',$fetchedData['id'])->update([
+            'name'=>$fetchedData['name'],
+            'category'=>$fetchedData['category'],
+            'unit'=>$fetchedData['unit'],
+            'outPrice'=>$fetchedData['outPrice'],
+            'store_quan'=>$fetchedData['store_quan']
+            ]);
+            return Redirect::to('productdetail/'.$fetchedData['id']);
+    }
+
 }

@@ -158,7 +158,7 @@ class ClientController extends Controller
         $client = Client::find($id);
         $paytransaction  =  PayTransaction::where('client_id',$id)->get();
         $totalinvoiceprice = $orders->sum('price');
-        $totalpayeprice    = $paytransaction->sum('price');;
+        $totalpayeprice    = $paytransaction->sum('price');
         $therestofamount   = $totalinvoiceprice - $totalpayeprice;
         return view('client.profile',compact('orders','client','therestofamount','paytransaction'));
     }
@@ -182,7 +182,9 @@ class ClientController extends Controller
             'client_id' => 'required'
         ]);
         $fetchedData = $request->all();
-
+        $therestofamount = Client::therestofamount($fetchedData['client_id']);
+        if($fetchedData['price']>$therestofamount)
+            return Redirect::back()->with('danger', ' المبلغ أكبر من المتبقي');    
         $paytransaction = PayTransaction::create([
             'price' => $fetchedData['price'],
             'client_id' => $fetchedData['client_id']
