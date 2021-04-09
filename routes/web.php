@@ -20,9 +20,6 @@ Route::get ('productform', function () {return view('product.addproduct');});
 
 Route::get ( '/product/{id}         ', [ProductController::class, 'show']);
 Route::post('/addproduct            ', [ProductController::class, 'addProduct']);
-//Route::get ('/orderform             ', [ProductController::class, 'orderform']);
-//Route::get ('/productcategory/{id}  ', [ProductController::class, 'productcategory']);
-//Route::post('/addorder              ', [ProductController::class, 'addorder']);
 Route::get ('productdetail/{id}     ', [ProductController::class, 'productdetail']);
 Route::get ('editproduct/{id}       ', [ProductController::class, 'editproduct']);
 Route::post('updateproduct          ', [ProductController::class, 'updateproduct']);

@@ -45,6 +45,7 @@ a,label,input{
 .card-title{
     color: white;
     text-align: right;
+    width: max-content;
 }
 .card-title:hover{
     color: rgb(53, 53, 104);
@@ -252,4 +253,10 @@ border-color: #1b1717!important;
 .wid{
     width: 600px;
     float: right;
+}
+
+.cartview{
+    color: white;
+    font-size: 25px!important;
+    padding-top: 7px;
 }

@@ -17,7 +17,7 @@ class ProductController extends Controller
 {
     public function show($id)
     {
-        $products = Product::where('category',$id)->get();
+        $products = Product::where('category',$id)->orderBy('name', 'ASC')->get();
         return view('product.products',compact('products')); 
     }
 
@@ -40,52 +40,6 @@ class ProductController extends Controller
         if($product==1)
             return Redirect::back()->with('success', 'المنتج تمت اضافته');
     }
-
-  /*  public function orderform()
-    {
-        $category = Product::numcategory();
-        $clients = Client::select('name','id')->get();
-        return view('product.addorder',compact('category','clients'));
-    }
-
-    public function productcategory($id)
-    {
-        $product = Product::where('category',$id)->get();
-        return json_encode( $product);
-    }
-
-    public function addorder(Request $request)
-    {
-        $request->validate([
-            'product_id' => 'required',
-            'inPrice' => 'required',
-            'outPrice' => 'required',
-            'quantity' => 'required',
-            'client_id'  =>  'required'
-        ]);
-
-        $fetchedData = $request->all();
-
-        $productOrder = ProductOrder::create([
-            'inPrice' => $fetchedData['inPrice'],
-            'outPrice' => $fetchedData['outPrice'],
-            'quantity' => $fetchedData['quantity'],
-            'product_id' => $fetchedData['product_id'],
-            'client_id' => $fetchedData['client_id']
-        ])->wasRecentlyCreated;
-
-        $product = Product::find($fetchedData['product_id']);
-        $product->update([
-            'outPrice' => $fetchedData['outPrice'],
-            'inPrice' => $fetchedData['inPrice']
-
-        ]);
-        $product->increment('store_quan',$fetchedData['quantity']);
-        
-        if($productOrder==1)
-        return Redirect::back()->with('success', 'الطلب تمت اضافته');
-
-    }*/
 
     public function productdetail($id)
     {

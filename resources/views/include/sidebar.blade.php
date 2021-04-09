@@ -15,6 +15,7 @@
                 <div class="fleft">
                     <ul class="navbar-nav mr-auto ">
                         <li class="nav-item active "> <a class="nav-link" href="../shoppingcart">العربة</a> </li>
+                        <i class="fa fa-shopping-cart cartview" aria-hidden="true"></i>
                     </ul>
                 </div>
                 <form class="form-inline my-2 my-md-0"> </form>
